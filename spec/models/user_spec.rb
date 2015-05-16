@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of(:last_name) }
   it { should validate_presence_of(:username) }
   it { should validate_uniqueness_of(:username) }
+  it { should have_many(:apps).class_name("AuthorizedApp")}
 
   describe "#full_name" do
     it "returns first and last name in a single string" do
